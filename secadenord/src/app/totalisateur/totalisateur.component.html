@@ -1,0 +1,32 @@
+<input #dateMesure type="date" class="form-control" style="width: 160px;" value="2018-01-01"/>
+<button (click)="modifierDate(dateMesure.value)">Actualiser</button>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>IDBOITIER</th>
+      <th>JOUR DE MESURE</th>
+      <th>total1</th>
+      <th>total2</th>
+      <th>total3</th>
+      <th>total4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of Alltotalisateurs" (click)="LoadChart(post.IDBOITIER, dateDebut.value, dateFin.value)">
+      <td>{{post.IDBOITIER}}</td>
+      <td>{{dateMesure.value}}</td>
+      <td>{{post.total1}}</td>
+      <td>{{post.total2}}</td>
+      <td>{{post.total3}}</td>
+      <td>{{post.total4}}</td>
+    </tr>
+  </tbody>
+</table> 
+<div>
+<input #dateDebut type="date"  style="width: 160px;" value="2018-01-01"/>
+<input #dateFin type="date"  style="width: 160px;" value="2018-01-02"/>
+</div>
+
+<div >
+<canvas id="barChart" width="400" height="100"></canvas>
+</div>

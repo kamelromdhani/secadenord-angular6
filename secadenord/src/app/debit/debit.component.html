@@ -1,0 +1,30 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>IDBOITIER</th>
+      <th>Date et Heure</th>
+      <th>debitmetre 1</th>
+      <th>debitmetre 2</th>
+      <th>debitmetre 3</th>
+      <th>debitmetre 4</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let debit of AllDebit" (click)="LoadChart(debit.IDBOITIER,dateDebut.value, dateFin.value)">
+      <td>{{debit.IDBOITIER}}</td>
+      <td>{{debit.DATETRAJET}}</td>
+      <td>{{debit.CARBURANT}}</td>
+      <td>{{debit.TEMPERATURE}}</td>
+      <td>{{debit.AN3}}</td>
+      <td>{{debit.AN4}}</td>
+    </tr>
+  </tbody>
+</table> 
+
+<input #dateDebut type="date" class="form-control" style="width: 160px;" value="2018-01-01"/>
+<input #dateFin type="date" class="form-control" style="width: 160px;"  value="2018-01-02"/>
+<h3>{{lieu}}</h3>
+<div>
+<canvas id="LineChart"  width="100" height="50"></canvas>
+</div>

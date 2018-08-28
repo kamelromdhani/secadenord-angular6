@@ -1,0 +1,101 @@
+ 
+ <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
+  <thead>
+    <tr>
+      <th>IDBOITIER</th>
+      <th>Date et Heure</th>
+      <th>aval</th>
+      <th>amont</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let niveau of AllNiveau"  (click)="LoadChart(niveau.IDBOITIER,dateDebut.value, dateFin.value )">
+      <td>{{niveau.IDBOITIER}}</td>
+      <td>{{niveau.DATETRAJET}}</td>
+      <td>{{niveau.CARBURANT}}</td>
+      <td>{{niveau.TEMPERATURE}}</td>
+    </tr>
+  </tbody>
+</table> 
+<input #dateDebut type="date" class="form-control" style="width: 160px;" value="2018-01-01"/>
+<input #dateFin type="date" class="form-control" style="width: 160px;"  value="2018-01-02"/>
+<h3>{{lieu}}</h3>
+<div>
+<canvas id="LineChart"  width="100" height="50"></canvas>
+</div>
+ 
+ 
+ 
+
+<!-- <table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Foo</td>
+      <td>Bar</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Someone</td>
+      <td>Youknow</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Iamout</td>
+      <td>Ofinspiration</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Yoda</td>
+      <td>Skywalker</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Patrick</td>
+      <td>Dupont</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Barack</td>
+      <td>Obama</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>François</td>
+      <td>Holland</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Michel</td>
+      <td>Popo</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Chuck</td>
+      <td>Norris</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Simon</td>
+      <td>Robin</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Louis</td>
+      <td>Lin</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Zelda</td>
+      <td>Link</td>
+    </tr>
+  </tbody>
+</table> -->
